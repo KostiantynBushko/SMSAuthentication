@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="Views.UserRegistrationView">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+					iOS="20, 40, 20, 20"
+					Android="20, 20, 20, 20"
+					WinPhone="20, 20, 20, 20"/>
+	</ContentPage.Padding>
+
+	<ContentPage.Content>
+
+		<StackLayout VerticalOptions="StartAndExpand"
+					 HorizontalOptions="FillAndExpand"
+					 Orientation="Vertical"
+					 Spacing="15">
+
+			<Label Text="Enter your phone number:" HorizontalOptions="StartAndExpand"/>
+
+			<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+				<Label x:Name="countryRegion" Text="us:" VerticalOptions="CenterAndExpand" IsVisible="false"/>
+				<Entry x:Name="phoneNumberEntry" Keyboard="Telephone" HorizontalOptions="FillAndExpand"/>
+			</StackLayout>
+
+			<Label Text="Enter password:" HorizontalOptions="StartAndExpand"/>
+
+			<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+				<Entry x:Name="userPassword" HorizontalOptions="FillAndExpand"/>
+			</StackLayout>
+		
+			<Button Text="Proceed" x:Name="buttonProceedAuthentication" IsEnabled="false" Clicked="proceedAuthentication"/>
+
+		</StackLayout>
+		
+	</ContentPage.Content>
+
+</ContentPage>

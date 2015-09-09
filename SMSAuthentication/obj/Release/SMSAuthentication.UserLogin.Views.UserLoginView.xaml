@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="Views.UserLoginView">
+
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+					iOS="20, 40, 20, 20"
+					Android="20, 20, 20, 20"
+					WinPhone="20, 20, 20, 20"/>
+	</ContentPage.Padding>
+
+	<ContentPage.Content>
+
+	    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+
+	    	<StackLayout VerticalOptions="CenterAndExpand"
+						 HorizontalOptions="FillAndExpand"
+						 Orientation="Vertical"
+						 Spacing="15">
+
+				<Label Text="Enter password:"/>
+				<Entry x:Name="passwordEntry" Placeholder="password" Keyboard="Numeric" BindingContext="{x:Reference showPassword}" IsPassword="{Binding Path=IsToggled}"/>
+
+				<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="15">
+					<Label Text="hide password" HorizontalOptions="Start"/>
+					<Switch x:Name="showPassword" HorizontalOptions="FillAndExpand" IsToggled="true"/>
+				</StackLayout>
+
+				<Button x:Name="buttonLogin" Text="Login" Clicked="confirmUserPassword"/>
+				<Button x:Name="buttonRegistration" Text="Registration" Clicked="userRegistration"/>
+
+				<ContentView Padding="0, 20, 0, 0">
+					<Label x:Name="forgotPassword" Text="Forgot password?" HorizontalOptions="CenterAndExpand" FontSize="16" TextColor="Olive"/>
+				</ContentView>
+
+			</StackLayout>
+
+		</ScrollView>
+
+	</ContentPage.Content>
+
+</ContentPage>

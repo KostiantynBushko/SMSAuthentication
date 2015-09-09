@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.smsauthentication">
+  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22" />
+  <application android:label="SMSAuthentication" android:name="mono.android.app.Application">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="SMSAuthentication.Droid" android:name="md53ba6e0dda53eb7f719a52a8f10ad88cb.MainActivity" />
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="UserLogin" android:name="md5965c796ffc0c8bb76099129c592077ed.UserLoginActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.companyname.smsauthentication.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="UserLogin" android:name="com.companyname.smsauthentication.TrialSplashScreen" android:theme="@style/Mono.Android.Theme.Splash" android:noHistory="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
+  <uses-permission android:name="android.permission.READ_PROFILE" />
+</manifest>

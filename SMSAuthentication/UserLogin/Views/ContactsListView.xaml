@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Views.ContactsListView">
+
+	<ContentPage.Content>
+			<StackLayout Orientation="Vertical"
+					 VerticalOptions="FillAndExpand"
+					 HorizontalOptions="FillAndExpand">
+
+  			<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="10, 3, 10, 3">
+					<Label Text="Select all" HorizontalOptions="Start" FontAttributes="Bold"/>
+					<Switch x:Name="selectAll" HorizontalOptions="FillAndExpand" IsToggled="false"/>
+			</StackLayout>
+
+			<ListView x:Name="contactsList" HasUnevenRows="true">
+
+			<ListView.ItemTemplate>
+
+				<DataTemplate>
+					<ViewCell >
+						<StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="10, 0, 10, 0">
+							<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+								<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+									<Label Text="{Binding Name}" TextColor="#58ACFA"/>
+									<Label Text="{Binding Phone}" TextColor="#BDBDBD" />
+								</StackLayout>
+                            	<Switch IsToggled="{Binding Enable}" VerticalOptions="Center" HorizontalOptions="End"/>
+                         	</StackLayout>
+                     	</StackLayout>
+               		</ViewCell>
+      			</DataTemplate>
+
+     		</ListView.ItemTemplate>
+
+  			</ListView>
+
+  			<StackLayout Orientation="Vertical" Padding="5, 0, 5, 3" HorizontalOptions="FillAndExpand">
+  				<Button Text="Share with my friends" BackgroundColor="#088A68" VerticalOptions="CenterAndExpand" Clicked="SendMessage"/>
+  			</StackLayout>
+
+		</StackLayout>
+	</ContentPage.Content>
+
+</ContentPage>
